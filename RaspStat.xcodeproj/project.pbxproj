@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		673F9422283F19370021988A /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673F9421283F19370021988A /* ActionsView.swift */; };
+		673F9423283F19370021988A /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673F9421283F19370021988A /* ActionsView.swift */; };
+		673F9425283F268B0021988A /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673F9424283F268B0021988A /* RoundedButton.swift */; };
+		673F9426283F268B0021988A /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673F9424283F268B0021988A /* RoundedButton.swift */; };
+		678757E927F0879200402538 /* StatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678757E827F0879200402538 /* StatService.swift */; };
+		678757EA27F0879200402538 /* StatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678757E827F0879200402538 /* StatService.swift */; };
+		678757EF27F09A9D00402538 /* StatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678757EE27F09A9D00402538 /* StatListView.swift */; };
+		678757F027F09A9D00402538 /* StatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678757EE27F09A9D00402538 /* StatListView.swift */; };
+		67C3C38327E9FD6400899AC5 /* StatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C3C38227E9FD6400899AC5 /* StatItemView.swift */; };
+		67C3C38427E9FD6400899AC5 /* StatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C3C38227E9FD6400899AC5 /* StatItemView.swift */; };
 		67F2BF2427E16B6800E7BA1D /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2BF2327E16B6800E7BA1D /* Tests_iOS.swift */; };
 		67F2BF2627E16B6800E7BA1D /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2BF2527E16B6800E7BA1D /* Tests_iOSLaunchTests.swift */; };
 		67F2BF3027E16B6800E7BA1D /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2BF2F27E16B6800E7BA1D /* Tests_macOS.swift */; };
@@ -37,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		673F9421283F19370021988A /* ActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsView.swift; sourceTree = "<group>"; };
+		673F9424283F268B0021988A /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		675EB1EE27F2D8AC0031FDD5 /* RaspStat--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RaspStat--iOS--Info.plist"; sourceTree = "<group>"; };
+		678757E827F0879200402538 /* StatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatService.swift; sourceTree = "<group>"; };
+		678757EE27F09A9D00402538 /* StatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListView.swift; sourceTree = "<group>"; };
+		67C3C38227E9FD6400899AC5 /* StatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatItemView.swift; sourceTree = "<group>"; };
+		67C3C38527EA16BD00899AC5 /* RaspStat (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RaspStat (iOS).entitlements"; sourceTree = "<group>"; };
 		67F2BF0B27E16B6500E7BA1D /* RaspStatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspStatApp.swift; sourceTree = "<group>"; };
 		67F2BF0C27E16B6500E7BA1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		67F2BF0D27E16B6700E7BA1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,9 +100,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		678757F127F09CAD00402538 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				67F2BF0C27E16B6500E7BA1D /* ContentView.swift */,
+				67C3C38227E9FD6400899AC5 /* StatItemView.swift */,
+				678757EE27F09A9D00402538 /* StatListView.swift */,
+				673F9421283F19370021988A /* ActionsView.swift */,
+				673F9424283F268B0021988A /* RoundedButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		678757F227F09D0500402538 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				678757E827F0879200402538 /* StatService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		67F2BF0527E16B6500E7BA1D = {
 			isa = PBXGroup;
 			children = (
+				675EB1EE27F2D8AC0031FDD5 /* RaspStat--iOS--Info.plist */,
+				67C3C38527EA16BD00899AC5 /* RaspStat (iOS).entitlements */,
 				67F2BF0A27E16B6500E7BA1D /* Shared */,
 				67F2BF1927E16B6700E7BA1D /* macOS */,
 				67F2BF2227E16B6800E7BA1D /* Tests iOS */,
@@ -97,8 +136,9 @@
 		67F2BF0A27E16B6500E7BA1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				678757F227F09D0500402538 /* Services */,
+				678757F127F09CAD00402538 /* Views */,
 				67F2BF0B27E16B6500E7BA1D /* RaspStatApp.swift */,
-				67F2BF0C27E16B6500E7BA1D /* ContentView.swift */,
 				67F2BF0D27E16B6700E7BA1D /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -300,6 +340,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F2BF3527E16B6800E7BA1D /* ContentView.swift in Sources */,
+				678757E927F0879200402538 /* StatService.swift in Sources */,
+				67C3C38327E9FD6400899AC5 /* StatItemView.swift in Sources */,
+				678757EF27F09A9D00402538 /* StatListView.swift in Sources */,
+				673F9425283F268B0021988A /* RoundedButton.swift in Sources */,
+				673F9422283F19370021988A /* ActionsView.swift in Sources */,
 				67F2BF3327E16B6800E7BA1D /* RaspStatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +354,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F2BF3627E16B6800E7BA1D /* ContentView.swift in Sources */,
+				678757EA27F0879200402538 /* StatService.swift in Sources */,
+				67C3C38427E9FD6400899AC5 /* StatItemView.swift in Sources */,
+				678757F027F09A9D00402538 /* StatListView.swift in Sources */,
+				673F9426283F268B0021988A /* RoundedButton.swift in Sources */,
+				673F9423283F19370021988A /* ActionsView.swift in Sources */,
 				67F2BF3427E16B6800E7BA1D /* RaspStatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,10 +513,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RaspStat (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQMZ383SM9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RaspStat--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,6 +534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hshersy.RaspStat;
 				PRODUCT_NAME = RaspStat;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -492,10 +546,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RaspStat (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQMZ383SM9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RaspStat--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -510,6 +567,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hshersy.RaspStat;
 				PRODUCT_NAME = RaspStat;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,18 +581,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQMZ383SM9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RaspStat--macOS--Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hshersy.RaspStat;
 				PRODUCT_NAME = RaspStat;
 				SDKROOT = macosx;
@@ -549,18 +610,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KQMZ383SM9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RaspStat--macOS--Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hshersy.RaspStat;
 				PRODUCT_NAME = RaspStat;
 				SDKROOT = macosx;
