@@ -27,7 +27,7 @@ struct ContentView: View {
                 ActionsView(
                     shutdownEnabled: statService.shutdownEnabled,
                     performShutdown: { statService.requestShutdown(config: hostConfig) },
-                    performRestart: { statService.requestReboot(config: hostConfig) }
+                    performRestart: { statService.requestRestart(config: hostConfig) }
                 )
                 Spacer()
             }

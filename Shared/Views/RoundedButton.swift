@@ -15,11 +15,12 @@ struct RoundedButton : View {
         Button(action: { self.onTap?()  }) {
             Text(title)
                 .font(bolded ?? false ? .headline : .body)
+#if os(iOS)
                 .padding(.all, 16)
                 .frame(maxWidth: .infinity)
                 .background(Color.gray.opacity(0.25))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
-                
+#endif
         }
     }
 }

@@ -21,15 +21,24 @@ struct ActionsView: View {
         VStack {
             Group {
                 RoundedButton(title: "Shutdown", bolded: true) {
+#if os(iOS)
                     showUnsafeOperationWarning = (true, self.performShutdown)
+#else
+                    self.performShutdown?()
+#endif
                 }
                 RoundedButton(title: "Restart", bolded: false) {
-                    showUnsafeOperationWarning = (true, self.performShutdown)
+#if os(iOS)
+                    showUnsafeOperationWarning = (true, self.performRestart)
+#else
+                    self.performRestart?()
+#endif
                 }
             }
             .disabled(!shutdownEnabled)
-            .foregroundColor(shutdownEnabled ? .blue : .gray)
+            .foregroundColor(shutdownEnabled ? .black : .gray)
         }.padding()
+        #if os(iOS)
             .actionSheet(isPresented: self.$showUnsafeOperationWarning.0) {
                 ActionSheet(
                     title: Text("Are you sure you want to shutdown the device?\nThe stat-monitoring server will be turned off."),
@@ -39,6 +48,7 @@ struct ActionsView: View {
                     ]
                 )
             }
+        #endif
         
     }
 }

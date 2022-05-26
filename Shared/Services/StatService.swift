@@ -140,6 +140,9 @@ class StatService: ObservableObject {
         URLSession.shared.dataTask(with: url) { data, res, err in
             if let err = err {
                 print("Error trying to shutdown", err)
+                DispatchQueue.main.async {
+                    self.shutdownEnabled = true
+                }
                 return
             }
             DispatchQueue.main.async {
@@ -154,10 +157,10 @@ class StatService: ObservableObject {
         URLSession.shared.dataTask(with: url) { data, res, err in
             if let err = err {
                 print("Error trying to reboot", err)
+                DispatchQueue.main.async {
+                    self.shutdownEnabled = true
+                }
                 return
-            }
-            DispatchQueue.main.async {
-                self.shutdownEnabled = true
             }
         }.resume()
     }
