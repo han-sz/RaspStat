@@ -135,7 +135,7 @@ class StatService: ObservableObject {
     }
     
     func requestShutdown(config: HostServerConfig) {
-        guard let url = URL(string: config.url(path: "power/off/2")) else { fatalError("Missing URL") }
+        guard let url = URL(string: config.url(path: "power/off/1")) else { fatalError("Missing URL") }
         self.shutdownEnabled = false
         URLSession.shared.dataTask(with: url) { data, res, err in
             if let err = err {
@@ -145,7 +145,7 @@ class StatService: ObservableObject {
             DispatchQueue.main.async {
                 self.shutdownEnabled = true
             }
-        }
+        }.resume()
     }
     
     func requestRestart(config: HostServerConfig) {
@@ -159,6 +159,6 @@ class StatService: ObservableObject {
             DispatchQueue.main.async {
                 self.shutdownEnabled = true
             }
-        }
+        }.resume()
     }
 }
