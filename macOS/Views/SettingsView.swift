@@ -11,7 +11,7 @@ struct SettingsView: View {
     @AppStorage(SettingsKey.autoReconnect.rawValue) private var autoReconnect = true
     @AppStorage(SettingsKey.fetchInterval.rawValue) private var fetchIntervalSeconds = 3.0
     @AppStorage(SettingsKey.hostPort.rawValue) private var port = "4333"
-    @AppStorage(SettingsKey.hostAddress.rawValue) private var host = "http://pi.local"
+    @AppStorage(SettingsKey.hostAddress.rawValue) private var host = "pi.local"
     
     var body: some View {
         

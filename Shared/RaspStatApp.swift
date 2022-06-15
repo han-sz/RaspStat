@@ -15,10 +15,8 @@ struct RaspStatApp: App {
     @AppStorage(SettingsKey.hostPort.rawValue) private var hostPort: String?
     
     private var statService = StatService.shared
-    private var hostConfig: HostServerConfig!
-    
-    init() {
-        self.hostConfig = generateDefaultHostConfig()
+    private var hostConfig: HostServerConfig {
+        generateDefaultHostConfig()
     }
     
     var body: some Scene {
@@ -41,6 +39,7 @@ struct RaspStatApp: App {
                 .padding(.horizontal)
                 .environmentObject(statService)
                 .environmentObject(hostConfig)
+                .navigationTitle(hostConfig.host)
 #else
             NavigationView {
                 ScrollView {
@@ -49,7 +48,7 @@ struct RaspStatApp: App {
                         .environmentObject(hostConfig)
                         .padding()
                 }
-                .navigationTitle("media.local")
+                .navigationTitle(hostConfig.host)
             }
 #endif
         }
@@ -67,7 +66,7 @@ struct RaspStatApp: App {
     }
     
     private func generateDefaultHostConfig() -> HostServerConfig {
-        return HostServerConfig(host: hostAddress ?? "http://media.local", port: Int(hostPort ?? "4333") ?? 4333)
+        return HostServerConfig(host: hostAddress ?? "media.local", port: Int(hostPort ?? "4333") ?? 4333)
     }
     
 }

@@ -23,8 +23,8 @@ class HostServerConfig : ObservableObject {
         self.port = port
     }
     
-    func url(path: String = "") -> String {
-        return "\(host):\(port)/\(path)"
+    func url(path: String = "", http: Bool = true) -> String {
+        return "\(http ? "http://" : "")\(host):\(port)/\(path)"
     }
 }
 
