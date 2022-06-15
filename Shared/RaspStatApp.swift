@@ -10,34 +10,37 @@ import SwiftUI
 @main
 struct RaspStatApp: App {
     
+    // App Settings
+    @AppStorage(SettingsKey.hostAddress.rawValue) private var hostAddress: String?
+    @AppStorage(SettingsKey.hostPort.rawValue) private var hostPort: String?
+    
     private var statService = StatService.shared
-    private var hostConfig = HostServerConfig(host: "http://media.local", port: 4333) // TODO: temporary
+    private var hostConfig: HostServerConfig!
+    
+    init() {
+        self.hostConfig = generateDefaultHostConfig()
+    }
     
     var body: some Scene {
-        
+#if os(macOS)
+        Settings {
+            TabView {
+                SettingsView()
+                    .tabItem {
+                        Label("General", systemImage: "gear")
+                    }
+            }
+            .padding(20)
+            .frame(width: 380, height: 250, alignment: .topLeading)
+        }
+#endif
         WindowGroup {
 #if os(macOS)
-//            HSplitView {
-//                VStack {
-//                    List {
-                        
-//                        Button( action:{  }, label: { Text("Pi Stats") })
-//                        /*@START_MENU_TOKEN@*/Text("Menu Item 1")/*@END_MENU_TOKEN@*/
-//                        /*@START_MENU_TOKEN@*/Text("Menu Item 2")/*@END_MENU_TOKEN@*/
-//                        /*@START_MENU_TOKEN@*/Text("Menu Item 3")/*@END_MENU_TOKEN@*/
-//                    }
-//                }
-                
-                ContentView()
-//                    .frame(minWidth: 290) // SplitView
-                    .frame(minWidth: 310, idealHeight: 150)
-                    .padding(.horizontal)
-                    .environmentObject(statService)
-                    .environmentObject(hostConfig)
-                
-                
-//            }
-//            .frame(maxHeight: 450)
+            ContentView()
+                .frame(minWidth: 330, idealWidth: 330, maxWidth: 470, idealHeight: 150)
+                .padding(.horizontal)
+                .environmentObject(statService)
+                .environmentObject(hostConfig)
 #else
             NavigationView {
                 ScrollView {
@@ -51,8 +54,20 @@ struct RaspStatApp: App {
 #endif
         }
 #if os(macOS)
+        .commands {
+            CommandGroup(replacing: .newItem, addition: { })
+            CommandMenu("Actions") {
+                Button("Shutdown") { statService.requestShutdown(config: hostConfig)}
+                Button("Restart") { statService.requestRestart(config: hostConfig) }
+            }
+        }
         .windowStyle(HiddenTitleBarWindowStyle())
         .windowToolbarStyle(UnifiedCompactWindowToolbarStyle())
 #endif
     }
+    
+    private func generateDefaultHostConfig() -> HostServerConfig {
+        return HostServerConfig(host: hostAddress ?? "http://media.local", port: Int(hostPort ?? "4333") ?? 4333)
+    }
+    
 }

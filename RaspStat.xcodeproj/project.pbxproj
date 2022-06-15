@@ -17,6 +17,9 @@
 		678757F027F09A9D00402538 /* StatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678757EE27F09A9D00402538 /* StatListView.swift */; };
 		67C3C38327E9FD6400899AC5 /* StatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C3C38227E9FD6400899AC5 /* StatItemView.swift */; };
 		67C3C38427E9FD6400899AC5 /* StatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C3C38227E9FD6400899AC5 /* StatItemView.swift */; };
+		67EC39492859B67A00AFD1D2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC39482859B67A00AFD1D2 /* SettingsView.swift */; };
+		67EC394C2859C13700AFD1D2 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC394B2859C13700AFD1D2 /* SettingsModel.swift */; };
+		67EC394D2859C13700AFD1D2 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EC394B2859C13700AFD1D2 /* SettingsModel.swift */; };
 		67F2BF2427E16B6800E7BA1D /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2BF2327E16B6800E7BA1D /* Tests_iOS.swift */; };
 		67F2BF2627E16B6800E7BA1D /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2BF2527E16B6800E7BA1D /* Tests_iOSLaunchTests.swift */; };
 		67F2BF3027E16B6800E7BA1D /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2BF2F27E16B6800E7BA1D /* Tests_macOS.swift */; };
@@ -54,6 +57,8 @@
 		678757EE27F09A9D00402538 /* StatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatListView.swift; sourceTree = "<group>"; };
 		67C3C38227E9FD6400899AC5 /* StatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatItemView.swift; sourceTree = "<group>"; };
 		67C3C38527EA16BD00899AC5 /* RaspStat (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RaspStat (iOS).entitlements"; sourceTree = "<group>"; };
+		67EC39482859B67A00AFD1D2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		67EC394B2859C13700AFD1D2 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		67F2BF0B27E16B6500E7BA1D /* RaspStatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspStatApp.swift; sourceTree = "<group>"; };
 		67F2BF0C27E16B6500E7BA1D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		67F2BF0D27E16B6700E7BA1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +125,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		67EC39472859B66600AFD1D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				67EC39482859B67A00AFD1D2 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		67EC394A2859C12200AFD1D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				67EC394B2859C13700AFD1D2 /* SettingsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		67F2BF0527E16B6500E7BA1D = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +157,7 @@
 		67F2BF0A27E16B6500E7BA1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				67EC394A2859C12200AFD1D2 /* Models */,
 				678757F227F09D0500402538 /* Services */,
 				678757F127F09CAD00402538 /* Views */,
 				67F2BF0B27E16B6500E7BA1D /* RaspStatApp.swift */,
@@ -158,6 +180,7 @@
 		67F2BF1927E16B6700E7BA1D /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				67EC39472859B66600AFD1D2 /* Views */,
 				67F2BF1A27E16B6700E7BA1D /* macOS.entitlements */,
 			);
 			path = macOS;
@@ -339,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67EC394C2859C13700AFD1D2 /* SettingsModel.swift in Sources */,
 				67F2BF3527E16B6800E7BA1D /* ContentView.swift in Sources */,
 				678757E927F0879200402538 /* StatService.swift in Sources */,
 				67C3C38327E9FD6400899AC5 /* StatItemView.swift in Sources */,
@@ -353,7 +377,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67EC394D2859C13700AFD1D2 /* SettingsModel.swift in Sources */,
 				67F2BF3627E16B6800E7BA1D /* ContentView.swift in Sources */,
+				67EC39492859B67A00AFD1D2 /* SettingsView.swift in Sources */,
 				678757EA27F0879200402538 /* StatService.swift in Sources */,
 				67C3C38427E9FD6400899AC5 /* StatItemView.swift in Sources */,
 				678757F027F09A9D00402538 /* StatListView.swift in Sources */,
